@@ -20,11 +20,16 @@ function App() {
 
   return (
     <div className="App">
+        <BotArmy 
+        enlistedBots={enlistedBots} 
+        releaseFromArmy={setEnlistedBots} />
+
       <BotCollection
-       bots={bots} enlistedBots={enlistedBots} setEnlistedBots={setEnlistedBots}
+       bots={bots} 
+       enlistedBots={enlistedBots} 
+       setEnlistedBots={setEnlistedBots}
       />
-      <BotArmy
-        enlistedBots={enlistedBots} releaseFromArmy={setEnlistedBots} />
+      
     </div>
   );
 }

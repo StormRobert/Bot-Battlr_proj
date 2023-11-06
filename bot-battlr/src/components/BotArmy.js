@@ -30,19 +30,19 @@ function BotArmy({ bots, releaseFromYourBotArmy, enlistedBots}) {
             >
               <img src={bot.avatar_url} alt={bot.name} />
               <h3>{bot.name}</h3>
-              <p className="catchphrase">Catchphrase: {bot.catchphrase}</p>
+              {/* <p className="catchphrase">Catchphrase: {bot.catchphrase}</p> */}
               <div className="bot-details">
                 <p>
-                  <span className="icon">🩸</span>Health: {bot.health}
+                  <span className="icon health-icon">❤️</span> Health: {bot.health}
                 </p>
                 <p>
-                  <span className="icon">🔥</span>Damage: {bot.damage}
+                  <span className="icon damage-icon">💥</span> Damage: {bot.damage}
                 </p>
                 <p>
-                  <span className="icon">🛡️</span>Armor: {bot.armor}
+                  <span className="icon armor-icon">🛡️</span> Armor: {bot.armor}
                 </p>
                 <p>
-                  <span className="icon">🤖</span>Class: {bot.bot_class}
+                  <span className="icon bot-class-icon"> 👾 </span> Class: {bot.bot_class}
                 </p>
               </div>
             </div>
