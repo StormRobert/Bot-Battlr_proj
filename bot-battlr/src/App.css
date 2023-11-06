@@ -1,16 +1,23 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&display=swap");
+:root {
+  --dark-one: #333;
+  --dark-two: #7a7a7a;
+  --dark-three: #0f0c16;
+  --main-color: #581a70b9;
+  --light-one: #fff;
+  --light-two: #f9fafb;
+  --light-three: #f6f7fb;
+  --light-four: #1db99f;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -24,15 +31,71 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  font-size: 18px;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style the "Bot Collection" header */
+.BotCollection h2 {
+  font-size: 24px; /* You can adjust the font size as needed */
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333; /* Text color */
+  border-bottom: 2px solid #333; /* Add a bottom border for separation */
+  padding-bottom: 10px;
+}
+.App {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.BotCollection {
+  flex: 1;
+  padding: 20px;
+}
+
+.bot-army {
+  flex: 1;
+  padding: 20px;
+  border-left: 1px solid #ccc;
+}
+
+.bot-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 20px;
+}
+
+.bot-card:hover {
+  transform: scale(1.05);
+}
+
+.bot-card.enlisted {
+  background-color: #f0f0f0;
+}
+
+.bot-card img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.bot-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-right: 5px;
 }

@@ -1,19 +1,24 @@
 import React from "react";
 
-function BotCollection({bots, addToYourBotArmy}) {
-    return (
-        <div className="bot-collection">
-          <h2>Bot Collection</h2>
-          <ul>
-            {bots.map((bot) => (
-              <li key={bot.id}>
-                {bot.name}
-                <button onClick={() => addToYourBotArmy(bot)}>Add to Army</button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      );
-    };
+import BotCard from "./SingleBot";
+
+function BotCollection({ bots, enlistedBots, setEnlistedBots }) {
+  return (
+    <div className="BotCollection">
+      <h2>Bot Collection</h2>
+      <ul className="bot-collection">
+        {bots.map((bot) => (
+          <li key={bot.id}>
+            <BotCard
+              bot={bot}
+              enlistedBots={enlistedBots}
+              setEnlistedBots={setEnlistedBots}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default BotCollection;
