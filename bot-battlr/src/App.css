@@ -67,6 +67,8 @@ h2 {
   padding: 20px;
   border-top: 1px solid #ccc; /* Add a top border to separate BotCollection and BotArmy */
   border-bottom: 2px solid #333;
+  background-color: var(--light-four);
+  color: var(--dark-three);
 }
 
 /* Style the horizontal layout for BotCollection items */
@@ -85,7 +87,9 @@ h2 {
   cursor: pointer;
   transition: transform 0.2s;
   max-width: 300px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(26, 1, 1, 0.2);
+  background-color: var(--main-color);
+  color: var(--dark-three);
   border-radius: 10px;
 }
 
