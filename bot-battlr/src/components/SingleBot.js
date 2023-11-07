@@ -1,11 +1,11 @@
 import React from "react";
 
-function BotCard({ bot, enlistedBots, setEnlistedBots }) {
+function SingleBot({ bot, enlistedBots, setEnlistedBots }) {
   const isEnlisted = enlistedBots.some(
     (enlistedBot) => enlistedBot.id === bot.id
   );
 
-  const handleClick = () => {
+  function handleDischarge(){
     if (isEnlisted) {
       
       const updatedEnlistedBots = enlistedBots.filter(
@@ -15,22 +15,42 @@ function BotCard({ bot, enlistedBots, setEnlistedBots }) {
     } else {
       
       setEnlistedBots([...enlistedBots, bot]);
+
+      fetch(`http://localhost:8001/bots/${bot.id}`, {
+        method: "DELETE",
+      })
+        .then((resp) => {
+          if (resp.status === 200) {
+            // Bot deleted successfully
+          } else if (resp.status === 404) {
+            // Handle the case where the bot is not found
+          } else {
+            // Handle error
+          }
+        })
+        .catch((error) => {
+          console.error("Error deleting bot:", error);
+        });
     }
   };
 
   return (
     <div 
-    className="bot-card" onClick={handleClick}>
+    className="single bot-card" onClick={handleDischarge}>
       <h2>{bot.name}</h2>
       <img src={bot.avatar_url}/>
-      {/* <p>{bot.description}</p> */}
       <p>Health:{bot.health}</p>
       <p>Damage:{bot.damage}</p>
       <p>Armor:{bot.armor}</p>
+      {isEnlisted && (
+        <button className="discharge-button" onClick={handleDischarge}>
+        X
+      </button>
+      )}
     </div>
 
     
   );
 }
 
-export default BotCard;
+export default SingleBot;

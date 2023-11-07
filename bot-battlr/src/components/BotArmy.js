@@ -12,10 +12,9 @@ function BotArmy({ bots, releaseFromYourBotArmy, enlistedBots}) {
     const groupedBots = [];
     
 
-  for (let i = 0; i < enlistedBots.length; i += 3) {
-    groupedBots.push(enlistedBots.slice(i, i + 3));
-  }
-
+    for (let i = 0; i < enlistedBots.length; i += 5) {
+      groupedBots.push(enlistedBots.slice(i, i + 4));
+    }
 
     return (
       <div className="bot-army">

@@ -135,3 +135,22 @@ h2 {
 .icon.bot-class-icon {
   font-size: 20px;
 }
+
+.discharge-button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 15%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.discharge-button:hover {
+  background-color: darkred;
+}

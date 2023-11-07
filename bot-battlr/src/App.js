@@ -19,6 +19,12 @@ const releaseFromArmy = (updatedEnlistedBots) => {
   // Implement the logic to release bots from the army
   setEnlistedBots(updatedEnlistedBots);
 };
+
+function handleBotDischarge(bot) {
+  // Remove the bot from enlistedBots in the frontend
+  const updatedEnlistedBots = enlistedBots.filter((enlistedBot) => enlistedBot.id !== bot.id);
+  setEnlistedBots(updatedEnlistedBots);
+}
  
 
   return (
@@ -31,6 +37,7 @@ const releaseFromArmy = (updatedEnlistedBots) => {
        bots={bots} 
        enlistedBots={enlistedBots} 
        setEnlistedBots={setEnlistedBots}
+       handleBotDischarge={handleBotDischarge}
       />
       
     </div>
