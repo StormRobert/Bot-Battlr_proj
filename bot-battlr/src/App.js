@@ -15,14 +15,17 @@ function App() {
     .catch((error) => console.error('Error fetching data:', error));
 }, []);
 
-
+const releaseFromArmy = (updatedEnlistedBots) => {
+  // Implement the logic to release bots from the army
+  setEnlistedBots(updatedEnlistedBots);
+};
  
 
   return (
     <div className="App">
         <BotArmy 
         enlistedBots={enlistedBots} 
-        releaseFromArmy={setEnlistedBots} />
+        releaseFromYourBotArmy={releaseFromArmy}/>
 
       <BotCollection
        bots={bots} 
